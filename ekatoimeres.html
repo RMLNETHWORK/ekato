@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>To My Greatest Phenomenon — 100 Days</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Newsreader:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF1E7;
+    --paper-card:#FFFBF4;
+    --wine:#5C1F2E;
+    --wine-deep:#2E0F18;
+    --rose:#C97B6E;
+    --gold:#C9973F;
+    --ink:#3A2A28;
+    --ink-soft:#6b5450;
+    --hairline: rgba(58,42,40,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Newsreader', serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding: 8vh 6vw 10vh;
+    background:
+      radial-gradient(120% 90% at 50% 0%, #4a1826 0%, var(--wine-deep) 62%, #200a10 100%);
+    color:#f3e2d8;
+    overflow:hidden;
+  }
+
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(1px 1px at 12% 22%, rgba(255,222,190,0.5) 0, transparent 60%),
+      radial-gradient(1px 1px at 82% 18%, rgba(255,222,190,0.4) 0, transparent 60%),
+      radial-gradient(1.5px 1.5px at 68% 72%, rgba(255,222,190,0.45) 0, transparent 60%),
+      radial-gradient(1px 1px at 25% 80%, rgba(255,222,190,0.35) 0, transparent 60%),
+      radial-gradient(1.5px 1.5px at 90% 55%, rgba(255,222,190,0.4) 0, transparent 60%);
+    pointer-events:none;
+  }
+
+  .petal{
+    position:absolute;
+    opacity:0.55;
+    animation: drift 14s ease-in-out infinite;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+  }
+  .petal svg{ display:block; width:100%; height:100%; }
+  .p1{ top:12%; left:10%; width:26px; height:26px; animation-delay:0s; }
+  .p2{ top:20%; right:12%; width:18px; height:18px; animation-delay:2.5s; }
+  .p3{ bottom:22%; left:16%; width:20px; height:20px; animation-delay:5s; }
+  .p4{ bottom:14%; right:18%; width:30px; height:30px; animation-delay:1.2s; }
+  .p5{ top:55%; left:6%; width:16px; height:16px; animation-delay:3.8s; }
+
+  @keyframes drift{
+    0%,100%{ transform:translateY(0) rotate(0deg); }
+    50%{ transform:translateY(-18px) rotate(14deg); }
+  }
+
+  .eyebrow{
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-size:0.95rem;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--rose);
+    margin:0 0 1.4rem;
+    z-index:1;
+  }
+
+  .seal{
+    position:relative;
+    z-index:1;
+    width:min(58vw, 220px);
+    height:min(58vw, 220px);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:1.6rem;
+    background:
+      radial-gradient(circle at 32% 28%, #e3b567, var(--gold) 55%, #9c7126 100%);
+    box-shadow:
+      0 0 0 6px rgba(201,151,63,0.12),
+      0 18px 40px -10px rgba(0,0,0,0.55),
+      inset 0 2px 6px rgba(255,255,255,0.35),
+      inset 0 -8px 16px rgba(0,0,0,0.28);
+    animation: breathe 6s ease-in-out infinite;
+  }
+  @keyframes breathe{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.03); }
+  }
+  .seal-inner{
+    text-align:center;
+    color:#3a2408;
+    font-family:'Fraunces', serif;
+  }
+  .seal-num{
+    font-size:min(13vw, 3.6rem);
+    font-weight:700;
+    line-height:0.85;
+    font-style:italic;
+    letter-spacing:-0.02em;
+  }
+  .seal-label{
+    font-size:0.62rem;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    margin-top:0.35rem;
+    font-family:'Newsreader', serif;
+    font-style:normal;
+  }
+
+  .hero h1{
+    z-index:1;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:clamp(2rem, 8vw, 3.4rem);
+    line-height:1.08;
+    margin:0 0 0.9rem;
+    max-width:15ch;
+    color:#fbf1e7;
+  }
+
+  .hero p.sub{
+    z-index:1;
+    font-family:'Caveat', cursive;
+    font-weight:600;
+    font-size:clamp(1.4rem, 5.5vw, 1.9rem);
+    color:var(--rose);
+    margin:0;
+  }
+
+  .scroll-cue{
+    position:absolute;
+    bottom:5vh;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.4rem;
+    color:rgba(243,226,216,0.6);
+    font-size:0.68rem;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    z-index:1;
+    animation: bob 2.4s ease-in-out infinite;
+  }
+  @keyframes bob{
+    0%,100%{ transform:translate(-50%,0); }
+    50%{ transform:translate(-50%,6px); }
+  }
+
+  /* ---------- LETTER ---------- */
+  .letter-wrap{
+    position:relative;
+    background:var(--paper-card);
+    margin-top:-6vh;
+    border-radius:28px 28px 0 0;
+    padding: 3.4rem 6.2vw 1rem;
+    box-shadow: 0 -20px 50px -20px rgba(46,15,24,0.35);
+  }
+
+  .letter-wrap::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:6px;
+    background: repeating-linear-gradient(90deg, var(--rose) 0 10px, transparent 10px 20px);
+    opacity:0.5;
+    border-radius:28px 28px 0 0;
+  }
+
+  .to-line{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(1.4rem, 5vw, 1.9rem);
+    color:var(--wine);
+    text-align:center;
+    margin: 0 0 2.4rem;
+  }
+
+  .letter{
+    max-width:62ch;
+    margin:0 auto;
+    font-size:clamp(1.02rem, 3.6vw, 1.12rem);
+    line-height:1.85;
+    color:var(--ink);
+  }
+
+  .letter p{
+    margin:0 0 1.5rem;
+    opacity:0;
+    transform:translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .letter p.in-view{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .letter p.dropcap::first-letter{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-style:italic;
+    font-size:3.6rem;
+    line-height:0.65;
+    float:left;
+    padding: 0.12em 0.08em 0 0;
+    color:var(--wine);
+  }
+
+  .flourish{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.9rem;
+    margin: 2.2rem 0 2.6rem;
+    color:var(--rose);
+    opacity:0.8;
+  }
+  .flourish .line{
+    height:1px;
+    width:22vw;
+    max-width:110px;
+    background: linear-gradient(90deg, transparent, var(--hairline));
+  }
+  .flourish .line.right{ background: linear-gradient(90deg, var(--hairline), transparent); }
+
+  .promise{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(1.15rem, 4.2vw, 1.4rem);
+    color:var(--wine);
+    text-align:center;
+    line-height:1.5;
+    margin: 0 auto 2.6rem;
+    max-width:26ch;
+    position:relative;
+  }
+  .promise .word{ position:relative; display:inline; background-image: linear-gradient(to top, rgba(201,151,63,0.28) 38%, transparent 38%); }
+
+  .nicknames{
+    text-align:center;
+    font-family:'Caveat', cursive;
+    color:var(--rose);
+    font-size:clamp(1.1rem, 4vw, 1.3rem);
+    line-height:1.6;
+    margin: 0 0 2.4rem;
+  }
+
+  /* ---------- SIGNATURE / FOOTER ---------- */
+  .signoff{
+    background: radial-gradient(120% 100% at 50% 100%, #4a1826 0%, var(--wine-deep) 70%);
+    color:#f3e2d8;
+    text-align:center;
+    padding: 4.2rem 8vw 3.6rem;
+    margin-top:1rem;
+  }
+
+  .signoff .prelude{
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-size:1.02rem;
+    color:rgba(243,226,216,0.75);
+    margin:0 0 0.4rem;
+  }
+  .signoff .lines p{
+    margin:0.15rem 0;
+    font-family:'Newsreader', serif;
+    font-size:1.02rem;
+    color:rgba(243,226,216,0.9);
+  }
+
+  .signature-script{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:clamp(2.6rem, 12vw, 4rem);
+    color:var(--gold);
+    margin: 1.6rem 0 0.4rem;
+  }
+
+  .signoff .forever{
+    font-family:'Caveat', cursive;
+    font-size:clamp(1.3rem, 5vw, 1.6rem);
+    color:var(--rose);
+    margin:0 0 0.2rem;
+  }
+
+  .date-stamp{
+    margin-top:2.4rem;
+    font-size:0.72rem;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    color:rgba(243,226,216,0.45);
+  }
+
+  .heart-divider{
+    display:flex;
+    justify-content:center;
+    margin:2rem 0 0.4rem;
+    color:var(--gold);
+    opacity:0.8;
+  }
+
+  @media (min-width:640px){
+    .letter-wrap{ padding-left:10vw; padding-right:10vw; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="petal p1"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.3-9C.8 8.6 2.6 5 6 5c2.4 0 4.2 1.6 6 4 1.8-2.4 3.6-4 6-4 3.4 0 5.2 3.6 3.3 7-2.3 4.4-9.3 9-9.3 9z" fill="#E7B7A6"/></svg></div>
+  <div class="petal p2"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.3-9C.8 8.6 2.6 5 6 5c2.4 0 4.2 1.6 6 4 1.8-2.4 3.6-4 6-4 3.4 0 5.2 3.6 3.3 7-2.3 4.4-9.3 9-9.3 9z" fill="#C9973F"/></svg></div>
+  <div class="petal p3"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.3-9C.8 8.6 2.6 5 6 5c2.4 0 4.2 1.6 6 4 1.8-2.4 3.6-4 6-4 3.4 0 5.2 3.6 3.3 7-2.3 4.4-9.3 9-9.3 9z" fill="#E7B7A6"/></svg></div>
+  <div class="petal p4"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.3-9C.8 8.6 2.6 5 6 5c2.4 0 4.2 1.6 6 4 1.8-2.4 3.6-4 6-4 3.4 0 5.2 3.6 3.3 7-2.3 4.4-9.3 9-9.3 9z" fill="#C9973F"/></svg></div>
+  <div class="petal p5"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.3-9C.8 8.6 2.6 5 6 5c2.4 0 4.2 1.6 6 4 1.8-2.4 3.6-4 6-4 3.4 0 5.2 3.6 3.3 7-2.3 4.4-9.3 9-9.3 9z" fill="#E7B7A6"/></svg></div>
+
+  <p class="eyebrow">ekato imeres</p>
+
+  <div class="seal">
+    <div class="seal-inner">
+      <div class="seal-num">100</div>
+      <div class="seal-label">days</div>
+    </div>
+  </div>
+
+  <h1>To My Greatest Phenomenon</h1>
+  <p class="sub">a letter, for you, on our 100th day</p>
+
+  <div class="scroll-cue">
+    <span>scroll to read</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<div class="letter-wrap">
+  <p class="to-line">My Love,</p>
+
+  <div class="letter" id="letter">
+
+    <p class="dropcap">There are countless words I could choose to begin this letter, yet none of them seem enough to describe what these past 100 days have meant to me. Time has moved so quietly, yet somehow every day with you has left a mark on my heart that I know will stay with me for a lifetime.</p>
+
+    <p>Not because you are impossible to explain, but because every day you continue to amaze me in ways I never thought someone could. Loving you has become one of the most beautiful parts of my life.</p>
+
+    <p>When I first got to know you, I thought I was simply meeting someone kind. But the more time we spent together, the more I realized that kindness is only one small part of who you are. You have a heart that chooses understanding over judgment, patience over anger (sometimes 🥰 hihihihii), and compassion over pride. You have this quiet way of making people feel heard, accepted, and safe, and I have been fortunate enough to experience that love from you.</p>
+
+    <p>One of the things I admire most about you is your maturity. In a world where people easily find reasons to criticize others, you always choose to be gentle. You never speak ill of someone just for the sake of having something to talk about. Instead, you remind me, without even realizing it, that kindness is a choice we make every single day. I look at you, and I see the kind of person I aspire to become.</p>
+
+    <div class="flourish"><span class="line"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.3-9C.8 8.6 2.6 5 6 5c2.4 0 4.2 1.6 6 4 1.8-2.4 3.6-4 6-4 3.4 0 5.2 3.6 3.3 7-2.3 4.4-9.3 9-9.3 9z" fill="currentColor"/></svg><span class="line right"></span></div>
+
+    <p>Thank you for giving me a love that feels safe. Thank you for listening to my thoughts, my dreams, my endless ideas, and even the things that probably sound impossible to everyone else. Whether I talk about my future, my ambitions, or the smallest details of my day, you've always made me feel like what matters to me also matters to you. That kind of support is something I will never take for granted.</p>
+
+    <p>I also want to thank you for trusting me with your own heart. Thank you for allowing me to see not only your happiest moments, but also your worries, your fears, your overthinking, and the questions you sometimes struggle to ask. I know opening up isn't always easy, yet you still chose to let me into your world. That trust is one of the greatest gifts you have ever given me, and I promise to treasure it for the rest of my life.</p>
+
+    <p class="promise">There are moments when we don't even have to say anything to each other, and it never feels empty. <span class="word">It feels like home.</span></p>
+
+    <p>Before I met you, I never knew silence could carry so much comfort. Now I know that when I'm with the right person, even quiet moments become memories worth holding onto.</p>
+
+    <p>Thank you for every smile you've given me. Thank you for every laugh we've shared, every little tampo that somehow makes you even more adorable 🤭, every whispered conversation, every glance, every walk together, and every ordinary day that somehow becomes extraordinary simply because you're there.</p>
+
+    <div class="flourish"><span class="line"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.3-9C.8 8.6 2.6 5 6 5c2.4 0 4.2 1.6 6 4 1.8-2.4 3.6-4 6-4 3.4 0 5.2 3.6 3.3 7-2.3 4.4-9.3 9-9.3 9z" fill="currentColor"/></svg><span class="line right"></span></div>
+
+    <p>Thank you for believing in me, even when my dreams seem far bigger than reality. Your quiet support has given me courage more times than you probably realize. Knowing that someone as wonderful as you believes in me makes me want to work even harder, not only to achieve my dreams, but also to become someone who deserves the faith you've placed in me.</p>
+
+    <p>Most of all, thank you for choosing grace. There were moments when I fell short, moments when I could have done better, yet instead of giving up on me, you chose to understand me. You chose to forgive me. Your forgiveness has never made me feel entitled to repeat my shortcomings — instead, it has inspired me to become better. Every chance you've given me reminds me that love is not just about celebrating the beautiful moments, it is also about helping each other grow.</p>
+
+    <p>I want you to know that I don't take that for granted. Every day, I want to become a better man, not because I feel forced to, but because loving you has changed me. You make me want to be more patient, more understanding, more thoughtful with my words, and more intentional with my actions. I want to continue growing as myself, and I want to continue growing into the partner you deserve.</p>
+
+    <p>You are the spark that ignited that change. You helped me become a better person, not only for you, but also for myself. Because of your love, I've learned that becoming better isn't about being perfect, it's about choosing to grow every single day. Thank you for inspiring me to become someone I'm proud to be.</p>
+
+    <div class="flourish"><span class="line"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.3-9C.8 8.6 2.6 5 6 5c2.4 0 4.2 1.6 6 4 1.8-2.4 3.6-4 6-4 3.4 0 5.2 3.6 3.3 7-2.3 4.4-9.3 9-9.3 9z" fill="currentColor"/></svg><span class="line right"></span></div>
+
+    <p>If there's one thing these 100 days have taught me, it's that love isn't found only in grand gestures. It's found in remembering the little things, in checking on each other after a long day, in listening before speaking, in choosing understanding during misunderstandings, in laughing together over the simplest moments, and in deciding, every single day, that our relationship is worth protecting.</p>
+
+    <p>I still remember telling you that I wanted to love you forever. That wasn't something I said because the moment felt right — it came from the deepest part of my heart. And even today, after everything we've shared together, I can say those same words with even greater certainty.</p>
+
+    <p class="promise">I don't love you because you're perfect. <span class="word">I love you because you're you.</span></p>
+
+    <p>Your gentle heart, your sincerity, your strength, your softness, your little quirks, your dreams, your fears, your laughter, your overthinking, your kindness — every little thing that makes you the incredible woman you are. You are, and always will be, my Greatest Phenomenon.</p>
+
+    <p>As we celebrate our 100th day together, I don't simply want to celebrate how far we've come. I want to celebrate the countless mornings we'll wake up choosing each other, the conversations we haven't had yet, the dreams we'll build together, the challenges we'll overcome hand in hand, and the future we'll continue writing one day at a time.</p>
+
+    <p>No matter where life takes us, I hope you never forget this:</p>
+
+    <p style="text-align:center; font-family:'Fraunces',serif; font-style:italic; font-weight:600; color:var(--wine); font-size:1.2em;">You are deeply loved.<br>You are deeply appreciated.<br>You are deeply cherished.</p>
+
+    <p>Thank you for making these past 100 days some of the happiest days of my life.</p>
+
+    <p class="nicknames">Happy 100th Day, my Cuttie Little Queen Bee,<br>my Hottie Little Kitten,<br>my Greatest Love, and my Greatest Phenomenon.</p>
+
+  </div>
+</div>
+
+<footer class="signoff">
+  <div class="heart-divider">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.3-9C.8 8.6 2.6 5 6 5c2.4 0 4.2 1.6 6 4 1.8-2.4 3.6-4 6-4 3.4 0 5.2 3.6 3.3 7-2.3 4.4-9.3 9-9.3 9z" fill="currentColor"/></svg>
+  </div>
+  <p class="prelude">I loved you yesterday.</p>
+  <div class="lines">
+    <p>I love you today.</p>
+    <p>And I'll continue choosing to love you tomorrow, and every day that follows.</p>
+  </div>
+
+  <p class="forever">Forever yours,</p>
+  <div class="signature-script">Rolly-ace</div>
+
+  <p class="date-stamp">100 days &amp; counting</p>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.letter p, .promise');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  items.forEach(p => io.observe(p));
+
+  // fallback: if IO unsupported or reduced motion, just show everything
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach(p => p.classList.add('in-view'));
+  }
+</script>
+
+</body>
+</html>
